@@ -1,0 +1,351 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+
+<!-- Link Bootstrap Icons for utility -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+<!-- Modern Footer with Gradient -->
+<footer class="footer-modern mt-5">
+  <!-- Main Footer Content -->
+  <div class="footer-content">
+    <div class="container py-5">
+      <div class="row g-4 g-lg-5"> <!-- Tăng khoảng cách g-lg-5 để các cột không dính -->
+        <!-- Brand Column -->
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-brand mb-4">
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <div class="brand-icon">
+                <i class="bi bi-lightning-charge-fill"></i>
+              </div>
+              <span class="brand-name">ElectroMart</span>
+            </div>
+            <p class="footer-desc mb-4">
+              <i class="bi bi-stars text-warning me-2"></i>
+              Hệ sinh thái điện máy hàng đầu Việt Nam.<br>
+              Giao nhanh • Giá tốt • Hỗ trợ 24/7
+            </p>
+            
+            <!-- Quick Contact Buttons -->
+            <div class="quick-contact d-flex gap-2 mb-4"> <!-- Thêm d-flex gap-2 mb-4 -->
+              <a href="tel:19001234" class="contact-btn">
+                <i class="bi bi-telephone-fill"></i>
+                <span>1900 1234</span>
+              </a>
+              <a href="mailto:support@electromart.vn" class="contact-btn contact-btn-secondary"> <!-- Thêm contact-btn-secondary -->
+                <i class="bi bi-envelope-fill"></i>
+                <span>Email</span>
+              </a>
+            </div>
+
+            <!-- Payment Methods -->
+            <div class="payment-methods mt-4">
+              <small class="text-muted d-block mb-2">Phương thức thanh toán</small>
+              <div class="d-flex gap-2 flex-wrap">
+                <span class="payment-badge payment-visa"><i class="bi bi-credit-card-2-front"></i> Visa</span>
+                <span class="payment-badge payment-master"><i class="bi bi-credit-card"></i> Master</span>
+                <span class="payment-badge payment-momo"><i class="bi bi-wallet2"></i> Momo</span>
+                <span class="payment-badge payment-vnpay"><i class="bi bi-qr-code"></i> VNPay</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shop Links -->
+        <div class="col-lg-2 col-md-6 col-6">
+          <h6 class="footer-title">
+            <i class="bi bi-shop me-2"></i>Cửa hàng
+          </h6>
+          <ul class="footer-links">
+            <li><a href="${pageContext.request.contextPath}/about">Về chúng tôi</a></li>
+            <li><a href="${pageContext.request.contextPath}/stores">Hệ thống showroom</a></li>
+            <li><a href="${pageContext.request.contextPath}/careers">Tuyển dụng</a></li>
+            <li><a href="${pageContext.request.contextPath}/contact">Liên hệ</a></li>
+          </ul>
+        </div>
+
+        <!-- Policy Links -->
+        <div class="col-lg-2 col-md-6 col-6">
+          <h6 class="footer-title">
+            <i class="bi bi-shield-check me-2"></i>Chính sách
+          </h6>
+          <ul class="footer-links">
+            <li><a href="${pageContext.request.contextPath}/policy/returns">Đổi trả 30 ngày</a></li>
+            <li><a href="${pageContext.request.contextPath}/policy/shipping">Giao hàng nhanh</a></li>
+            <li><a href="${pageContext.request.contextPath}/policy/warranty">Bảo hành chính hãng</a></li>
+            <li><a href="${pageContext.request.contextPath}/policy/privacy">Bảo mật thông tin</a></li>
+            <li><a href="${pageContext.request.contextPath}/policy/terms">Điều khoản sử dụng</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact & Newsletter -->
+        <div class="col-lg-4 col-md-6">
+          <h6 class="footer-title">
+            <i class="bi bi-envelope-heart me-2"></i>Đăng ký nhận tin
+          </h6>
+          <p class="text-light-emphasis mb-3 small">
+            Nhận ngay mã giảm giá 10% cho đơn hàng đầu tiên!
+          </p>
+          
+          <!-- Newsletter Form -->
+          <form class="newsletter-form mb-4" action="${pageContext.request.contextPath}/subscribe" method="post">
+            <div class="input-group">
+              <input type="email" name="email" class="form-control" 
+                     placeholder="Nhập email của bạn..." required>
+              <button class="btn btn-gradient" type="submit">
+                <i class="bi bi-send-fill"></i>
+              </button>
+            </div>
+          </form>
+
+          <!-- Contact Info -->
+          <div class="contact-info">
+            <div class="contact-item mb-3"> <!-- Thêm mb-3 -->
+              <i class="bi bi-geo-alt-fill"></i>
+              <div>
+                <strong>Showroom</strong><br>
+                <small>Số 1 Võ Văn Ngân, Thủ Đức, TP.HCM</small>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="bi bi-clock-fill"></i>
+              <div>
+                <strong>Giờ làm việc</strong><br>
+                <small>8:00 - 21:00 (Tất cả các ngày)</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="row align-items-center py-3">
+        <div class="col-lg-6 text-center text-lg-start mb-3 mb-lg-0">
+          <small class="text-light-emphasis">
+            © <%= java.time.Year.now() %> ElectroMart. Made with 
+            <i class="bi bi-heart-fill text-danger"></i> in Vietnam
+          </small>
+        </div>
+        <div class="col-lg-6">
+          <div class="d-flex justify-content-center justify-content-lg-end align-items-center gap-3">
+            <!-- Footer Links -->
+            <a href="${pageContext.request.contextPath}/policy/terms" class="footer-bottom-link">Điều khoản</a>
+            <span class="text-muted">•</span>
+            <a href="${pageContext.request.contextPath}/policy/privacy" class="footer-bottom-link">Bảo mật</a>
+            <span class="text-muted">•</span>
+            
+            <!-- Social Media -->
+            <div class="social-icons d-flex gap-2"> <!-- Thêm d-flex gap-2 -->
+              <a href="https://www.facebook.com/thong.vu.871003" target="_blank" class="social-icon social-facebook">
+                <i class="bi bi-facebook"></i>
+              </a>
+              <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="social-icon social-youtube">
+                <i class="bi bi-youtube"></i>
+              </a>
+              <a href="https://www.tiktok.com/@lanhxinhyeu06/video/7460359805111176455" target="_blank" class="social-icon social-tiktok">
+                <i class="bi bi-tiktok"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Custom Footer Styles -->
+<style>
+/* --- STICKY FOOTER FIX --- */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Kéo giãn nội dung chính để đẩy footer xuống */
+body > *:not(.footer-modern) {
+  flex-grow: 1;
+}
+
+/* --- 1. BIẾN VÀ THIẾT LẬP CHUNG --- */
+:root {
+  --footer-bg-dark: #121212;
+  --footer-bg-gradient-start: #1c1d1e;
+  --footer-bg-gradient-end: #121212;
+  --text-color: #f0f0f0;
+  --link-color: #b0b0b0;
+  --link-hover-color: #ffffff;
+  --primary-color: #3b82f6; /* Blue 500 */
+  --secondary-color: #f97316; /* Orange 500 */
+  --border-color: rgba(255, 255, 255, 0.1);
+  --input-bg: #333;
+  --input-text: #fff;
+  --padding-y: 3rem; 
+  --facebook-color: #1877f2;
+  --youtube-color: #ff0000;
+  --tiktok-color: #fe2c55;
+  --momo-color: #a50064;
+  --vnpay-color: #0076a5;
+}
+
+.footer-modern {
+  background-color: var(--footer-bg-dark);
+  color: var(--text-color);
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3); /* Tăng bóng đổ */
+  flex-shrink: 0; /* Đảm bảo footer không bị co lại */
+}
+
+.footer-content {
+  background: linear-gradient(180deg, var(--footer-bg-gradient-start) 0%, var(--footer-bg-gradient-end) 100%);
+}
+
+/* --- 2. THƯƠNG HIỆU VÀ MÔ TẢ --- */
+.footer-brand .brand-icon {
+  font-size: 1.5rem;
+  color: var(--secondary-color); /* Đổi màu Icon thương hiệu sang Orange */
+}
+
+.footer-brand .brand-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* --- 3. TIÊU ĐỀ CỘT & LIÊN KẾT --- */
+.footer-title {
+  font-size: 1.1rem;
+  font-weight: 700; /* In đậm hơn */
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--primary-color); /* Đường kẻ phân cách màu Xanh */
+}
+
+.footer-links li {
+  margin-bottom: 0.75rem; 
+}
+
+.footer-links a {
+  color: var(--link-color);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s, transform 0.3s;
+  display: inline-block;
+}
+
+.footer-links a:hover {
+  color: var(--primary-color); /* Liên kết hover màu Xanh */
+  transform: translateX(5px); 
+}
+
+/* --- 4. QUICK CONTACT --- */
+.contact-btn {
+  /* Giữ nguyên màu Blue */
+  background-color: var(--input-bg);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+}
+
+.contact-btn-secondary {
+  /* Màu phụ Email (Orange) */
+  color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
+}
+
+.contact-btn:hover {
+  background-color: var(--primary-color);
+  color: var(--footer-bg-dark);
+}
+
+.contact-btn-secondary:hover {
+  background-color: var(--secondary-color);
+  color: var(--footer-bg-dark);
+}
+
+/* --- 5. PAYMENT METHODS --- */
+.payment-badge {
+  background-color: var(--input-bg);
+  color: var(--link-color);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s;
+}
+
+.payment-badge i {
+  color: var(--link-hover-color);
+}
+
+.payment-visa i, .payment-master i { color: var(--primary-color); }
+.payment-momo { color: var(--momo-color); border-color: var(--momo-color); }
+.payment-vnpay { color: var(--vnpay-color); border-color: var(--vnpay-color); }
+
+/* --- 6. NEWSLETTER & CONTACT INFO --- */
+.newsletter-form .input-group {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.newsletter-form .form-control {
+  background-color: var(--input-bg);
+  color: var(--input-text);
+  border: 1px solid transparent;
+}
+
+.contact-info .contact-item i {
+  color: var(--secondary-color); /* Icon thông tin liên hệ màu Orange */
+}
+
+/* --- 7. FOOTER BOTTOM & SOCIAL --- */
+.footer-bottom {
+  background-color: var(--footer-bg-dark);
+}
+
+/* Social Icons */
+.social-icons a {
+  background-color: var(--input-bg);
+  color: var(--link-color);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s;
+}
+
+.social-facebook:hover {
+  background-color: var(--facebook-color);
+  border-color: var(--facebook-color);
+  color: white;
+}
+
+.social-youtube:hover {
+  background-color: var(--youtube-color);
+  border-color: var(--youtube-color);
+  color: white;
+}
+
+.social-tiktok:hover {
+  background-color: var(--tiktok-color);
+  border-color: var(--tiktok-color);
+  color: white;
+}
+
+/* Tối ưu hóa trên Mobile */
+@media (max-width: 768px) {
+  .footer-title {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .footer-brand {
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+}
+</style>
+
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/site.js"></script>

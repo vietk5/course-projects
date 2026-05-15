@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="3.0" 
+    xmlns="https://jakarta.ee/xml/ns/persistence" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence 
+       https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
+
+  <persistence-unit name="shopPU" 
+                    transaction-type="RESOURCE_LOCAL">
+  <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+  <exclude-unlisted-classes>false</exclude-unlisted-classes>
+
+  <properties>
+    <property name="jakarta.persistence.jdbc.url" 
+              value="jdbc:postgresql://dpg-d470begdl3ps73f48vcg-a.oregon-postgres.render.com:5432/dtb_web?ssl=true&amp;sslmode=require"/>
+              <property name="jakarta.persistence.jdbc.driver"  
+              value="org.postgresql.Driver"/>
+    <property name="jakarta.persistence.jdbc.user" value="dtb_web_user"/>
+    <property name="jakarta.persistence.jdbc.password" value="1HIEMdI35qKux4E2sfSSAGIsHADxqnfx"/>
+    <!-- update: tự động cập nhật schema khi cần, giữ nguyên dữ liệu -->
+    <property name="jakarta.persistence.schema-generation.database.action" 
+              value="update"/>
+  </properties>
+ </persistence-unit>
+</persistence>
