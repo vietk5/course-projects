@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopee Việt Nam | Mua Sắm Online</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="bait-screen">
+    <div class="voucher-box">
+        <img src="/img/logoo.png" width="100">
+        <h1>CHÚC MỪNG BẠN!</h1>
+        <p>Hệ thống ghi nhận bạn nhận được <b>Voucher 500K</b>.</p>
+        
+        <a href="https://shopee.vn" id="btn-start" class="fake-button">NHẬN NGAY</a>
+    </div>
+</div>
+
+    <div id="attack-screen" class="hidden">
+        <div id="fake-address-bar">
+            <div class="nav-btns"><span>←</span><span>→</span><span>⟳</span></div>
+            <div class="url-input">
+                <span class="lock">🔒</span>
+                <span class="text">https://shopee.vn/search?keyword=quần+áo+tết</span>
+            </div>
+        </div>
+
+        <div class="shopee-layout">
+            <nav class="shopee-top">
+                <div class="inner">
+                    <div class="left">Kênh Người Bán | Trở thành Người bán Shopee | Tải ứng dụng</div>
+                    <div class="right">🔔 Thông báo | ❓ Hỗ trợ | <b>Đăng Ký</b> | <b>Đăng Nhập</b></div>
+                </div>
+            </nav>
+
+            <header class="shopee-main-header">
+                <div class="header-content">
+                    <div class="logo">Shopee</div>
+                    <div class="search-box">
+                        <div class="input-wrap">
+                            <input type="text" value="quần áo tết">
+                            <button class="btn-search">🔍</button>
+                        </div>
+                    </div>
+                    <div class="cart">🛒</div>
+                </div>
+            </header>
+
+            <main class="shopee-content">
+                <aside class="sidebar">
+                    <h3>BỘ LỌC TÌM KIẾM</h3>
+                    <p><b>Nơi Bán</b></p>
+                    <label><input type="checkbox"> Hà Nội</label><br>
+                    <label><input type="checkbox"> TP. Hồ Chí Minh</label>
+                </aside>
+
+                <section class="results">
+                    <div class="sort-bar">Sắp xếp theo: <span class="active">Liên Quan</span> <span>Mới Nhất</span></div>
+                    <div class="grid" id="product-grid"></div>
+                </section>
+            </main>
+        </div>
+
+        <div id="troll-screen" class="hidden">
+            <div class="troll-content">
+                <div class="tenor-gif-embed" data-postid="6540808372197226742" data-share-method="host" data-aspect-ratio="1" data-width="100%">
+                    <a href="https://tenor.com/view/yippee-cat-kitty-gif-6540808372197226742">Yippee Cat Kitty GIF</a>
+                </div>
+                <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+                <h1>BẠN ĐÃ BỊ LỪA!</h1>
+                <p>Đây là mô phỏng Fullscreen API Attack.</p>
+            </div>
+        </div>
+    </div>
+
+    <audio id="troll-audio" src="/img/troll.mp3"></audio>
+    <script src="script.js"></script>
+</body>
+</html>

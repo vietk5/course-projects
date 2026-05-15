@@ -1,0 +1,13 @@
+    </div><!-- /.col-md-10 -->
+  </div><!-- /.row -->
+</div><!-- /.container-fluid -->
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Site JS -->
+<script src="${pageContext.request.contextPath}/assets/js/site.js"></script>
+
+</body>
+</html>
+

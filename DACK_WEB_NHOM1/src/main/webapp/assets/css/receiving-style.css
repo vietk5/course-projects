@@ -1,0 +1,200 @@
+/* ====== Reset & font ====== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  background-color: #f5f7fb;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+}
+
+/* ====== Container (Đã chỉnh sửa) ====== */
+.container {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  /* Chỉ còn 1 cột cho form */
+  max-width: 700px; /* Giảm max-width để form không quá rộng */
+  width: 100%;
+  padding: 30px;
+  animation: fadeIn 0.4s ease;
+}
+
+/* ====== Header (Đã chỉnh sửa) ====== */
+header {
+  /* Loại bỏ grid-column vì không dùng grid nữa */
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+  display: flex; /* Dùng flex để căn chỉnh nội dung và help */
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap; /* Cho phép xuống dòng trên màn hình nhỏ */
+}
+
+header h1 {
+  font-size: 1.6rem;
+  color: #2d3e50;
+  margin-bottom: 6px;
+}
+
+header p {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+header .help {
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: 6px;
+  text-align: right;
+}
+
+/* ====== Form ====== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.two-col {
+  display: flex;
+  gap: 20px;
+  /* Đảm bảo các cột tự động xuống dòng trên thiết bị nhỏ */
+  flex-wrap: wrap; 
+}
+
+.field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  /* Đảm bảo field chiếm toàn bộ chiều rộng khi xuống dòng */
+  min-width: 45%; 
+}
+
+/* Fix: Khi .two-col wrap, field vẫn cần chiếm 100% */
+@media (max-width: 500px) {
+    .field {
+        min-width: 100%;
+    }
+}
+
+
+label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #2d3e50;
+}
+
+input,
+select,
+textarea {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #4b7bec;
+  box-shadow: 0 0 0 3px rgba(75, 123, 236, 0.2);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.help {
+  font-size: 0.85rem;
+  color: #777;
+  margin-top: 4px;
+}
+
+/* ====== Buttons ====== */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.btn-primary {
+  background-color: #4b7bec;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 22px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: background-color 0.25s, transform 0.1s;
+}
+
+.btn-primary:hover {
+  background-color: #3867d6;
+}
+
+.btn-primary:active {
+  transform: scale(0.97);
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  color: #333;
+  padding: 10px 22px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-ghost:hover {
+  background-color: #f1f1f1;
+}
+
+/* ====== Loại bỏ phần Preview Panel và Responsive cũ ====== */
+/* .panel, .preview-title, .preview-card, .muted đã được loại bỏ */
+
+/* Loại bỏ media query cũ không cần thiết vì layout đã là 1 cột */
+/* Giữ nguyên @keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.alert-popup {
+    /* Vị trí cố định (fixed) ở góc trên bên trái */
+    position: fixed;
+    top: 20px;
+    left: -350px; /* Bắt đầu ngoài màn hình */
+    z-index: 1000;
+    
+    /* Thiết kế */
+    padding: 15px 30px;
+    background-color: #4CAF50; /* Màu xanh lá cây */
+    color: white;
+    font-size: 16px;
+    border-radius: 0 5px 5px 0; /* Bo tròn chỉ phía bên phải */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    
+    /* Hiệu ứng chuyển động */
+    transition: left 0.5s ease-in-out; /* Chuyển động trong 0.5 giây */
+}
+
+/* Class sẽ được thêm bằng JS để hiển thị popup */
+.alert-popup.show {
+    left: 0; /* Di chuyển vào vị trí 0px (sát mép trái) */
+}

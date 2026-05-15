@@ -1,0 +1,26 @@
+/target/
+
+# SSL Certificates - Không commit vào Git
+*.keystore
+*.jks
+*.p12
+*.pem
+*.crt
+*.key
+
+# Tomcat logs
+logs/
+work/
+temp/
+
+# IDE files
+.idea/
+*.iml
+.vscode/
+.project
+.classpath
+.settings/
+
+# OS files
+.DS_Store
+Thumbs.db
