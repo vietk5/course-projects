@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MemSentry | Memory IOC Analyzer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="nav">
+    <a class="brand" href="/">
+      <span class="brand-mark"><i></i><i></i><i></i></span>
+      <span>MEM<span>SENTRY</span></span>
+    </a>
+    <div class="engine-state"><span></span>Nhóm 08</div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow">MEMORY FORENSICS / IOC DISCOVERY</div>
+      <h1>Biến memory dump thành<br><em>forensic intelligence.</em></h1>
+      <p>Tự động phân tích tiến trình, kết nối mạng, code injection, persistence và YARA match. Nhận báo cáo điều tra hoàn chỉnh.</p>
+      <!-- <div class="capabilities">
+        <span>VOLATILITY 3</span><b></b><span>YARA</span><b></b><span>HEURISTICS</span><b></b><span>AI TRIAGE</span>
+      </div> -->
+    </section>
+
+    <section class="workspace">
+      <div class="upload-panel">
+        <div class="panel-head">
+          <div><span class="step">01</span><h2>Tải lên memory image</h2></div>
+          <span class="secure-label">LOCAL PROCESSING</span>
+        </div>
+        <form id="upload-form">
+          <input id="file-input" name="memory_dump" type="file" hidden accept="{{ allowed_extensions }}">
+          <label class="dropzone" for="file-input" id="dropzone">
+            <div class="scan-corners"></div>
+            <div class="upload-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5M5 14v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4"/></svg>
+            </div>
+            <strong>Thả memory dump vào đây</strong>
+            <span>hoặc nhấn để chọn file từ máy</span>
+            <small>{{ allowed_extensions }} · tối đa {{ "%.0f"|format(max_upload_gb) }} GB</small>
+          </label>
+          <div class="selected-file" id="selected-file" hidden>
+            <div class="file-symbol">MEM</div>
+            <div class="file-info"><strong id="file-name"></strong><span id="file-size"></span></div>
+            <button type="button" id="remove-file" aria-label="Bỏ file">×</button>
+          </div>
+          <button class="analyze-btn" id="analyze-btn" type="submit" disabled>
+            <span>Bắt đầu phân tích IOC</span>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></svg>
+          </button>
+          <p class="form-error" id="form-error"></p>
+        </form>
+      </div>
+
+      <aside class="process-list">
+        <div class="process-title">ANALYSIS PIPELINE</div>
+        <ol>
+          <li><span>01</span><div><b>Image fingerprint</b><small>SHA-256 integrity hash</small></div></li>
+          <li><span>02</span><div><b>Volatility extraction</b><small>15 forensic plugins</small></div></li>
+          <li><span>03</span><div><b>IOC correlation</b><small>Network, process, injection</small></div></li>
+          <li><span>04</span><div><b>YARA detection</b><small>Malware family matching</small></div></li>
+          <li><span>05</span><div><b>Report generation</b><small>HTML, JSON and raw evidence</small></div></li>
+        </ol>
+      </aside>
+    </section>
+
+    <section class="analysis-panel" id="analysis-panel" hidden>
+      <div class="analysis-top">
+        <div><span class="status-kicker">LIVE ANALYSIS</span><h2 id="analysis-file">Đang xử lý</h2></div>
+        <div class="status-pill" id="status-pill"><span></span> RUNNING</div>
+      </div>
+      <div class="progress-track"><div id="progress-bar"></div></div>
+      <div class="progress-meta"><span id="progress-message">Đang chuẩn bị...</span><strong id="progress-value">0%</strong></div>
+      <div class="result-grid" id="result-grid" hidden>
+        <div class="risk-card critical"><small>CRITICAL</small><strong id="critical-count">0</strong></div>
+        <div class="risk-card high"><small>HIGH</small><strong id="high-count">0</strong></div>
+        <div class="risk-card medium"><small>MEDIUM</small><strong id="medium-count">0</strong></div>
+        <div class="risk-card yara"><small>YARA HITS</small><strong id="yara-count">0</strong></div>
+      </div>
+      <div class="result-actions" id="result-actions" hidden>
+        <a class="view-btn" id="view-report" target="_blank">Xem báo cáo</a>
+        <a class="download-btn" id="download-report">Tải gói report ZIP</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>MEMSENTRY / AUTO IOC EXTRACTOR V5</span>
+    <span>DỮ LIỆU NHẠY CẢM · CHỈ TRIỂN KHAI TRONG MÔI TRƯỜNG TIN CẬY</span>
+  </footer>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
